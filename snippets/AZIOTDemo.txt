@@ -1,0 +1,35 @@
+adding new brain to az iot
+--------------------------
+open vs code -> current directory for az iot deployment
+open deployment.template.json
+rt click -> add new module -> import from ACR
+enter name
+select ACR repository, and image (respository) name
+
+scroll down to {createoptions} on your new brain entry
+- copy from existing brain - change port (above 5000 bet 5001 - 5999)
+rt click on deployment.template.json
+build iot solution
+
+
+IN IOT CENTRAL APP
+
+go to device templates, select current
+select edit manifset
+click on replace file
+upload your new dep.arm732.teplate.json
+click save
+
+
+select devices from left menu 
+select your device by clicking circle on left of device name
+select migrate, select new template version. 
+
+on device
+------
+ssh moab
+to check az iot brain provisioning -> docker ps
+iotedge list
+once you see provisioned brains in list
+bot reset to reset menu
+check moab device menu

@@ -1,0 +1,21 @@
+Add function in  globals
+
+# Function for Linear Quadratic Regulator (Programmed Controller not used)
+function LQR(State: SimState): SimAction {
+    var K = [-2.0, 35.0, -1.5, 3.0]
+    return {
+        Vm: K[0] * State.theta + K[1] * State.alpha + K[2] * State.theta_dot + K[3] * State.alpha_dot,
+    }
+}
+
+add programed concept
+
+Name:    Balance
+Output:  SimAction
+
+Programmed Function: LQR
+
+Notes: 
+Programmed concept using control theory designed around equilibrium point
+
+
